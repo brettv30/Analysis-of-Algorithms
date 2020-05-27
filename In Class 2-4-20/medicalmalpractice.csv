@@ -1,0 +1,119 @@
+Amount,Severity,Age,Private,Marital,Specialty,Insurance,Gender
+426500,6,37,Private,Married,Pediatrics,Private,Female
+64000,4,66,Private,Married,Plastic Surgeon,Medicare/Medicaid,Female
+17604,7,69,Private,Married,Internal Medicine,Private,Male
+1986,3,56,Not Private,Married,Urological Surgery,Private,Female
+41500,5,42,Private,Married,General Surgery,Unknown,Male
+33708,7,69,Private,Married,General Surgery,Private,Male
+177498,3,34,Private,Married,OBGYN,Private,Female
+64000,4,45,Private,Single,Orthopedic Surgery,Private,Female
+5250,5,42,Private,Married,Internal Medicine,Private,Female
+28000,5,73,Private,Unknown,Ophthamology,Unknown,Female
+9500,4,2,Private,Single,Emergency Medicine,Unknown,Female
+4000,3,31,Private,Married,Orthopedic Surgery,Private,Male
+38100,3,36,Private,Married,OBGYN,No Insurance,Female
+34000,3,24,Private,Married,Anesthesiology,Unknown,Female
+21500,5,42,Private,Divorced,Neurology/Neurosurgery,Private,Male
+16500,3,29,Private,Married,Family Practice,No Insurance,Female
+48500,3,61,Private,Married,Orthopedic Surgery,Workers Compensation,Male
+136500,9,49,Private,Married,General Surgery,Unknown,Female
+376500,7,0,Private,Single,OBGYN,Private,Female
+311500,3,28,Private,Married,General Surgery,Private,Female
+926500,8,34,Private,Married,Dermatology,Private,Male
+74000,2,60,Private,Married,Anesthesiology,Private,Female
+86500,4,69,Private,Married,OBGYN,Medicare/Medicaid,Female
+36500,7,80,Private,Widowed,Ophthamology,Private,Female
+32000,5,29,Private,Married,Family Practice,No Insurance,Female
+2534,3,48,Not Private,Married,General Surgery,Private,Female
+10250,3,39,Private,Unknown,Family Practice,Unknown,Male
+27000,3,37,Private,Married,Physical Medicine,Unknown,Female
+160000,3,36,Private,Unknown,General Surgery,Unknown,Male
+531710,4,48,Private,Unknown,Neurology/Neurosurgery,Private,Male
+296542,9,42,Private,Married,Family Practice,Private,Male
+26500,5,45,Private,Married,Family Practice,Unknown,Male
+6500,4,18,Private,Single,Orthopedic Surgery,Private,Male
+536500,6,35,Private,Married,Urological Surgery,Private,Male
+102001,4,43,Not Private,Single,OBGYN,Private,Female
+231500,7,43,Private,Divorced,Orthopedic Surgery,Private,Male
+231500,7,43,Private,Divorced,Neurology/Neurosurgery,Private,Male
+4111,3,7,Not Private,Single,Ophthamology,Private,Female
+5830,3,31,Not Private,Single,Orthopedic Surgery,No Insurance,Male
+161500,3,70,Private,Married,Neurology/Neurosurgery,Medicare/Medicaid,Female
+61500,8,51,Private,Married,General Surgery,No Insurance,Female
+11500,7,57,Private,Married,Emergency Medicine,Unknown,Male
+56500,4,53,Private,Unknown,Orthopedic Surgery,Unknown,Male
+41500,9,21,Private,Single,Family Practice,Unknown,Male
+11500,5,30,Private,Divorced,Family Practice,Medicare/Medicaid,Female
+51000,4,33,Private,Married,Orthopedic Surgery,Medicare/Medicaid,Male
+851500,7,43,Private,Single,OBGYN,Private,Female
+251500,7,43,Private,Single,OBGYN,Private,Female
+101500,5,43,Private,Married,Ophthamology,Private,Female
+221500,7,50,Private,Married,Family Practice,Private,Male
+46500,2,11,Private,Single,Family Practice,No Insurance,Female
+2776,3,40,Private,Married,OBGYN,Private,Female
+19000,3,28,Private,Married,Cardiology,Private,Female
+76500,6,21,Private,Single,Resident,Medicare/Medicaid,Female
+21500,7,57,Private,Married,Cardiology,Private,Male
+776500,8,42,Private,Divorced,Emergency Medicine,Unknown,Male
+361500,5,23,Private,Married,Family Practice,Private,Female
+91500,8,33,Private,Single,General Surgery,Private,Female
+7500,1,24,Private,Married,OBGYN,Private,Female
+10648,3,25,Private,Unknown,General Surgery,Private,Female
+21700,4,18,Private,Unknown,Family Practice,Private,Female
+6500,4,65,Not Private,Married,Internal Medicine,Private,Female
+2435,5,21,Not Private,Single,Internal Medicine,Medicare/Medicaid,Female
+139000,6,24,Private,Married,Neurology/Neurosurgery,Workers Compensation,Female
+139000,6,24,Private,Married,Neurology/Neurosurgery,Workers Compensation,Female
+15000,3,41,Private,Married,Family Practice,Private,Female
+31500,9,63,Private,Married,General Surgery,Medicare/Medicaid,Female
+8000,9,63,Private,Married,Internal Medicine,Medicare/Medicaid,Female
+21500,3,33,Private,Unknown,Orthopedic Surgery,Private,Female
+96180,8,44,Not Private,Married,Pathology,Private,Female
+11000,3,38,Not Private,Married,OBGYN,Private,Female
+206500,4,37,Not Private,Divorced,General Surgery,Medicare/Medicaid,Female
+7500,3,14,Not Private,Single,Emergency Medicine,Private,Female
+51500,7,56,Private,Married,Neurology/Neurosurgery,Unknown,Male
+14000,7,46,Private,Married,Emergency Medicine,Private,Male
+21500,3,31,Private,Married,General Surgery,Unknown,Male
+10500,3,33,Private,Married,Resident,Unknown,Male
+20500,4,37,Not Private,Single,Emergency Medicine,Unknown,Male
+20500,4,37,Not Private,Unknown,Radiology,Unknown,Male
+21500,3,87,Not Private,Single,Internal Medicine,Medicare/Medicaid,Male
+23500,4,63,Not Private,Married,Urological Surgery,Private,Female
+46861,4,76,Not Private,Married,Radiology,Unknown,Male
+96500,9,73,Not Private,Married,General Surgery,Unknown,Female
+351500,9,59,Not Private,Married,Internal Medicine,Unknown,Male
+101500,9,64,Private,Married,Family Practice,Unknown,Male
+6910,3,40,Not Private,Married,Anesthesiology,Private,Male
+74000,4,12,Private,Single,Pediatrics,Private,Female
+13500,3,33,Private,Married,Family Practice,Private,Male
+14000,4,57,Private,Married,Family Practice,Private,Male
+22750,3,31,Not Private,Married,Resident,No Insurance,Female
+21500,5,34,Not Private,Unknown,Plastic Surgeon,Unknown,Female
+6500,4,31,Private,Single,Thoracic Surgery,Private,Female
+2015,3,66,Not Private,Married,Anesthesiology,Unknown,Male
+16500,4,19,Private,Single,Orthopedic Surgery,Private,Female
+3500,4,27,Private,Married,Radiology,Unknown,Male
+111500,5,51,Private,Married,Orthopedic Surgery,Unknown,Female
+19500,9,78,Private,Widowed,General Surgery,Unknown,Female
+2155,3,40,Not Private,Unknown,Anesthesiology,Unknown,Male
+4749,3,22,Not Private,Single,Emergency Medicine,No Insurance,Male
+2760,3,65,Not Private,Unknown,Anesthesiology,Medicare/Medicaid,Male
+1567,3,40,Not Private,Unknown,Anesthesiology,Unknown,Female
+2010,3,50,Not Private,Unknown,Internal Medicine,Unknown,Male
+2025,3,21,Not Private,Unknown,Anesthesiology,Unknown,Male
+9000,3,54,Not Private,Married,Occupational Medicine,Private,Female
+1550,3,70,Not Private,Married,Anesthesiology,Unknown,Female
+1574,3,46,Not Private,Married,Anesthesiology,Unknown,Male
+82500,9,73,Private,Married,Cardiology,Medicare/Medicaid,Female
+82500,9,73,Private,Married,Cardiology,Medicare/Medicaid,Female
+3700,3,40,Not Private,Married,OBGYN,No Insurance,Female
+251500,5,56,Private,Married,Family Practice,No Insurance,Female
+24039,3,50,Not Private,Married,Ophthamology,Unknown,Male
+3500,4,53,Not Private,Married,Family Practice,Private,Female
+16500,4,31,Not Private,Single,OBGYN,Medicare/Medicaid,Female
+6500,3,24,Not Private,Married,Dermatology,Unknown,Female
+1805,3,40,Not Private,Unknown,Anesthesiology,No Insurance,Female
+1644,3,72,Not Private,Unknown,Anesthesiology,Medicare/Medicaid,Male
+22750,3,31,Not Private,Married,OBGYN,No Insurance,Female
+1573,3,57,Not Private,Married,Anesthesiology,Unknown,Female
