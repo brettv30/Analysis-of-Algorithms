@@ -1,0 +1,268 @@
+# Brett Vogelsang & Andrew Reeves
+# Part 1
+# I am first creating two numerical vectors
+x<-c(4,2,6)
+y<-c(1,0,-1)
+
+# now I am looking for number of variables in the vector
+# The result is 3
+length(x)
+
+# now I am looking for the sum of all numbers in the vector
+# The result is 12
+sum(x)
+
+# now I am adding the elements of both vectors
+# The result is 5 2 5
+x+y
+
+# now I am multiplying the elements of both vectors
+# The result is 4 0 -6
+x*y
+
+# now I am subtracting all elements in the vector by 2
+# The result is 2 0 4
+x-2
+
+# now I am squaring all elements in the vector
+# The result is 16 4 36
+x^2
+
+# Part 2
+# I am printing out the numbers starting from 7 and ending at 11, increasing by 1
+# This sequence will produce 7 8 9 10 11
+7:11
+
+# now I am printing out the sequence of numbers starting at 2 and ending at 9, increasing by 1
+# This sequence will produce 2 3 4 5 6 7 8 9
+seq(2,9)
+
+# now I am printing out the sequence of numbers starting at 4 and ending at 10, increasing by 2 each time
+# This sequence will produce 4 6 8 10
+seq(4,10,by=2)
+
+# now I am printing out the letters 'NA' ten differnet times on the same line
+# This sequence will produce NA NA NA NA NA NA NA NA NA NA
+rep(NA,10)
+
+# Part 3
+# I am creating a numerical vector
+x = c(5,9,2,3,4,6,7,0,8,12,2,9)
+
+# now I am printing out the element at the second index of the vector
+# The result is 9
+x[2]
+
+# now I am printing out the elements of the vector starting at the second index and ending at the fourth index
+# The result is 9 2 3
+x[2:4]
+
+# create a new vector consisting of the elements at indexes 2,3,5,6, & 7 of the original vector
+# THe result is 9 2 4 6 7
+x[c(2,3,5:7)]
+
+# display the vector without the elements between indexes 10 and 12
+# The result is 5 9 2 3 4 6 7 0 8
+x[-(10:12)]
+
+
+#Problem 2: 100 meter dash and Misleading graphs
+# read the mens100 file into the dashdata object
+dashdata = read.csv("mens100.csv")
+
+# 1 Answer: 2 Variables & 29 observations
+# print the number of observations and number variables within dashdata
+dim(dashdata)
+
+# Question 2
+# create a bar plot of the data with time on the y-axis and year on the x-axis
+barplot(dashdata$time,names.arg=dashdata$year,las=2)
+
+# Question 3
+# tell 'r' to create two graphs in the same column
+par(mfrow = c(2,1))
+# compare both bar graphs on top of each other by using the par function
+barplot(dashdata$time,names.arg=dashdata$year,las=2)
+barplot(dashdata$time,names.arg=dashdata$year,las=2,ylim=c(9.5,12.5),xpd=FALSE)
+
+
+# Problem 3: Playing around with the cars data in R
+# read the cars10 file to the cardata variable
+cardata = read.csv("cars10.csv")
+
+# Question 1
+# Answer: the number of variables is 11 and the number of observations is 74
+# Here I am finding the dimensions of the data frame
+dim(cardata)
+
+# Question 2
+# We found the number of domestic cars in the cardata file to be 52
+# Here I am finding the number of cars in the foreign column with the Domestic tag
+length(cardata$foreign[cardata$foreign == "Domestic"])
+
+# We found the numbe of foreign cars in the cardata file to be 22
+# Here I am finding the number of cars in the foreign column with the Foreign tag
+length(cardata$foreign[cardata$foreign == "Foreign"])
+
+# Questions 3
+# find which measurement in the cardata mpg column is the minimum
+# Answer: 12
+cardata$mpg[which.min(cardata$mpg)]
+
+# Question 4
+# find which measurement in the cardata price column is the maximum
+# Answer: 15906
+cardata$price[which.max(cardata$price)]
+
+# Question 5
+# here I create a histogram of the cardata price column
+# the histogram is right skewed
+hist(cardata$price)
+
+# Question 6
+# here I compare both histograms on top of each other by using the par function
+# Foreign cars are able to achieve above 40mpg whereas domestic cars can only attain above 30mpg
+# However, more domestic cars operate within the range of 15 - 20mpg than foreign cars.
+par(mfrow = c(2,1))
+hist(cardata$mpg[cardata$foreign == "Domestic"])
+hist(cardata$mpg[cardata$foreign == "Foreign"])
+
+# Question 7
+# here I create a scatter plot of both the weight and length columns in the cardata file
+# we can infer from this graph that the lengthier the car within this population, the heavier it will be, and vice versa
+plot(cardata$weight ~ cardata$length)
+
+# Problem 4: Finance data via the quantmod package
+# I added some extra commands here because I was playing around a bit
+library(quantmod)
+getSymbols("INTC",from="2016-01-01")
+getSymbols("IBM",from="2016-01-01")
+getSymbols("AAL",from= "2016-01-01")
+getSymbols("T", from= "2016-01-01")
+intcret=as.numeric(quarterlyReturn(INTC))
+ibmret=as.numeric(quarterlyReturn(IBM))
+aalret=as.numeric(quarterlyReturn(AAL))
+tret=as.numeric(quarterlyReturn(T))
+par(mfrow=c(3,2))
+plot(Ad(INTC))
+plot(Ad(IBM))
+plot(Ad(AAL))
+plot(Ad(T))
+hist(Vo(INTC)/1000)
+# It is cool how you can notice that the wider the sample size became, the closer the 
+# dots on the scatter plot became and vice versa
+plot(ibmret,intcret)
+plot(aalret, tret)
+
+# Problem 5: Airline Data
+# read the airline2008Nov file to the mydata variable
+mydata = read.csv("airline2008Nov.csv")
+
+# Question 1
+# show the dimensions of the data frame 
+# mydata contains 9997 observations and 26 variables
+dim(mydata)
+
+# determine the maximum number of occurrences an airline has within the data frame
+# the YV airline has the most flights in the dataset
+mydata$UniqueCarrier[which.max(mydata$UniqueCarrier)]
+
+# Question 2
+# A: On what day of the week do people most frequently travel?
+# B: What is the average taxi time on the most popular flight weekend?
+
+# Question 3 
+# Part A
+# this will print out all rows with missing data
+mydata[!complete.cases(mydata),]
+
+# this will create a new data set with no missing data
+newdata = na.omit(mydata)
+
+# I am writing the data within the newdata object to a csv file titled cleanairline
+write.csv(newdata, "cleanairline.csv")
+
+# Part B
+# There are 9997 observations
+# Here I am showing the dimensions of the data frame 
+dim(newdata)
+
+# Part C
+# After analyzing this data, our records would be insuffiecient. if 
+# we were to be audited, this data would not show the correct numbers
+
+# Question 4
+# Part A
+# Here I create a smaller subset of data only containing information pertaining to ATL, JFK, DFW, and MSP
+smalldata = subset(mydata,Dest == "ATL" | Dest == "JFK" | Dest == "DFW" | Dest == "MSP")
+
+# I am resetting the factor variable Dest within the data frame
+smalldata$Dest = factor(smalldata$Dest)
+
+# Part B
+# Here I am refactoring the titles of ATL, JFK, DFW, and MSP to more comprehensible language
+smalldata$Dest = factor(smalldata$Dest, levels = c("ATL", "JFK", "DFW", "MSP"),
+                        labels = c("Atlanta", "NYKennedy", "DallasFtWorth", 
+                                   "MinneapolisStPaul"),
+                        ordered = TRUE)
+# Part C
+#create a table of every entry in the Dest variable
+table(smalldata$Dest)
+
+# create a pie chart in conjunction with the table function to display a pie chart of the four important observations
+pie(table(factor(smalldata$Dest)))
+
+
+# Question 5
+# Part A & B
+# Here I write a mathematical equation to calculate ActualElapsedTime from AirTime, TaxIn, and TaxiOut added together
+# I place that calculated number into the CalculatedElapsedTime variable
+smalldata$CalculatedElapsedTime = (smalldata$AirTime + smalldata$TaxiIn + smalldata$TaxiOut)
+
+# Part C
+# Here I am using the head function to print the first six rows of the ActualElapsedTime variable 
+# and the CalculatedElapsedTime to show that they both are the same.
+head(smalldata$ActualElapsedTime)
+head(smalldata$CalculatedElapsedTime)
+
+# Question 6
+# Part A
+# I am adding together all of the times a flight had a weather delay
+# there were 71 flights within the data frame that had a weather dealy
+sum(smalldata$WeatherDelay > 0)
+
+# Here I am calculating the proportion of flights that had a weather delay against all flights in the data frame
+# 4.221 percent of flights had a weather delay
+sum(smalldata$WeatherDelay > 0) / length(smalldata$WeatherDelay) * 100
+
+# Part B
+# Here I am creating a subset of all the flights bound for JFK
+JFKset = subset(smalldata,Dest == "JFK")
+
+# Now I sum all of the flights that had a weather delay, there were 11 in total
+sum(JFKset$WeatherDelay > 0)
+
+# Now I am calculating the proportion of flights bound for JFK that had a weather delay against
+# all flights bound for JFK 
+# 3.873 percent of flights going to JFK had a weather delay
+sum(JFKset$WeatherDelay > 0) / length(JFKset$WeatherDelay) * 100
+
+# Part C
+# Here I calculate the maximum departure delay within the data frame
+# This maximum delay was 1286 minutes
+which.max(smalldata$DepDelay)
+
+# here I find which carrier had that maximum departure delay 
+# The carrier was NW
+smalldata$UniqueCarrier[which.max(smalldata$DepDelay)]
+
+# Part D
+# here I determine the day of the week  that had the least flights
+# Day 6, Saturday, had the least flights 
+smalldata$DayOfWeek[which.min(smalldata$Dest)]
+
+# Part E
+# Here I create a scatter plot with the TaxiOut information on the Y axis and the TaxiIn information on the X axis
+# This graph is useful because it shows that generally most taxiing done by planes takes less than 20 minutes
+# However, this graph could be better if we examined the data between 20 on the TaxiIn and 50 on the TaxiOut
+plot(smalldata$TaxiOut ~ smalldata$TaxiIn)

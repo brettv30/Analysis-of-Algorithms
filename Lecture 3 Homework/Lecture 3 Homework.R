@@ -1,0 +1,131 @@
+# Brett Vogelsang & Andrew Reeves
+# Lecture 3 Homework 
+# Question 1
+# Here I read the data from the cars10 file to the data frame
+cardata = read.csv("cars10.csv")
+
+# Here I view the cardata
+View(cardata)
+
+# Here I am summarizing the headroom and trunk columns
+summary(cardata$headroom)
+summary(cardata$trunk)
+
+# Here I am creating tables of the headroom and trunk information
+table(cardata$headroom)
+table(cardata$trunk)
+
+# Here I create a boxplot of the weight of each car
+boxplot(cardata$weight, data = cardata, col = c("Red"),
+        ylab="Car Weight",ylim=c(1000, 5000), main="boxplot of the weight of all cars")
+
+
+# Here I am creating a barplot that shows a relationship between the size of a trunk 
+# and the headroom inside the car. The larger the trunk, the more headroom.
+barplot(sort(cardata$headroom), sort(cardata$trunk), col=c("Blue", "Red"), 
+        xlab="Trunk Size", ylab="Headroom", cex.names=0.5, 
+        main="Is there a correlation between headroom and trunk size?", border="Green")
+
+# Here I am creating a histogram showing the weight of each car and 
+# the numner of times is appears within the data frame
+hist(cardata$weight, col=c("Orange", "Purple", "Green"), ylim=c(0,20), xlab="Weight")
+
+# create a subset of the data pertaining to Datsun vehicles
+datsundata = subset(cardata, cardata$make == "Datsun 200" | 
+                    cardata$make == "Datsun 210" | 
+                    cardata$make == "Datsun 510" |
+                    cardata$make == "Datsun 810")
+
+# create a table of the headroom inside a datsun
+table(datsundata$headroom)
+
+# remove any zeros from the above table
+table(factor(datsundata$headroom))
+
+# establish the new headroom column within the data frame
+factor(datsundata$headroom)
+
+# call the plotrix library
+library(plotrix)
+
+# create a pie chart showing the difference between the headroom space inside of 
+# each Datsun vehicle within the subset
+pie3D(table(factor(datsundata$headroom)), col=c("Red", "Blue", "Orange"), 
+    main = "Headroom inside of a Datsun vehicle", labels=c("2.0", 1.5, 2.5))
+
+# Question 2 
+# Here I calculate the standard deviation of the mpg column
+# Result: 5.7855
+sd(cardata$mpg)
+
+# Here I calculate the variance of the mpg column
+# Result: 33.4720
+var(cardata$mpg)
+
+# Here I calculate the mean of the mpg column
+# Result: 21.2973
+mean(cardata$mpg)
+
+# Here I calculate the median of the mpg column
+# Result: 20
+median(cardata$mpg)
+
+# Here I calculate the range of the mpg column
+# Result: 12 41
+range(cardata$mpg)
+
+# Here I call the moments library in order to use the skewness and kurtosis functions
+library(moments)
+
+# Here I call the skewness function on the mpg column
+# Result: 0.9487
+skewness(cardata$mpg)
+
+# Here I call the kurtosis function on the mpg column
+# Result: 3.9750
+kurtosis(cardata$mpg)
+
+# Question 3
+# Here I am finding the mean mpg of the gear_ratio range between 2.0 - 2.5
+# Result: 15.8461
+lowestgr = mean(cardata$mpg[cardata$gear_ratio >= 2.0 & cardata$gear_ratio < 2.5])
+
+# Here I am finding the mean mpg of the gear_ratio range between 2.5 - 3.0
+# Result: 20.2692
+lowgr = mean(cardata$mpg[cardata$gear_ratio >= 2.5 & cardata$gear_ratio < 3.0])
+
+# Here I am finding the mean mpg of the gear_ratio range between 3.0 - 3.5
+# Result: 21.9444
+highgr = mean(cardata$mpg[cardata$gear_ratio >= 3.0 & cardata$gear_ratio < 3.5])
+
+# Here I am finding the mean mpg of the gear_ratio range between 3.5 - 4.0
+# Result: 26.3529
+highestgr = mean(cardata$mpg[cardata$gear_ratio >= 3.5 & cardata$gear_ratio < 4.0])
+
+# Create a vector containing the four mean measurements 
+# Result: 15.8 20.3 26.4 21.9
+GearRatioData = c(lowestgr, lowgr, highestgr, highgr)
+
+# create a barplot to display the relationship between 
+# the average gear ratio and average mpg
+barplot(GearRatioData, col=c("lightgreen", "lightblue", "pink", "purple"),
+     xlab="Average Gear Ratio", 
+     ylab="Average MPG", main="Average MPG per gear ratio",
+     names.arg = c("2.0 - 2.5", "2.5 - 3.0", "3.0 - 3.5", "3.5 - 4.0"))
+
+#create a histogram to display the relationship between
+# the average gear ratio and average mpg
+hist(cardata$gear_ratio, main="Histogram of Gear Ratio vs MPG", 
+     xlab="Average Gear Ratio",ylab="Average MPG", yaxt='n', 
+     col=c("lightgreen", "lightblue", "pink", "purple"))
+
+# allow for a second graph to overlay 
+par(new=TRUE)
+
+# create a line/dot plot over the histogram to show exact 
+# numbers of average mpg
+plot(GearRatioData, type = 'b',xlab="", ylab="", axes=FALSE, 
+     cex=1, col="black")
+# display the correct axis on the correct side
+axis(2, at=seq(14, 28, 2))
+
